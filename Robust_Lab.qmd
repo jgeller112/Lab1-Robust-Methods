@@ -74,8 +74,6 @@ Use the `stars` data in `robustbase`. This data looks at the relationship betwee
 
     f\. Plot bootstrap mean along with 95% CIs (with `ggplot2`). Use annotate to note what the vertical lines represent.
 
-    e\. Write up these results as they would appear in a journal
-
 4.  Pepper Joe measured the length and heat of 85 chili peppers. He wants to know if smaller peppers are hotter than longer peppers.
 
     ```{r}
@@ -103,7 +101,18 @@ d\. Plot the null-hypothesis distribution (NHD) for the difference
 
 e\. Compare the observed mean difference to the NHD (is *p* \< .05?)
 
-f\. Re-run using the `permuco` package
+6.  Suppose a replication experiment was conducted to further examine the interaction effect between driving difficulty and conversation difficulty on driving errors in a driving simulator. In the replication, the researchers administered the same three levels of conversation difficulty; (1) control, (2) easy, (3) difficult (C, E, D) but assume that they added a third level of driving difficulty; (1) low, (2) moderate, (3) difficult (L, M, D). Assume the design was completely between subjects and conduct a factorial ANOVA to test the main effects of conversation and driving difficulty as well as the interaction effect. The DV is the number of errors committed in the driving simulator.
+
+    ```{r}
+    library(tidyverse)
+    fac_data<-read_csv("https://raw.githubusercontent.com/jgeller112/psy503-psych_stats/master/static/assignment/data/fact_final.csv")
+
+
+    ```
+
+    a\. Run a permutation test (ANOVA)
+
+    b\. How would you follow-up significant effects in this context?
 
 ## Robust Linear Models
 
