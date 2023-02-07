@@ -6,13 +6,13 @@ execute:
   message: false
 ---
 
-# Lab 1- Robust Methods
+# Lab 1-Robust Methods
 
 ## Instructions
 
--   If you are fitting a model, display the model output in a neatly formatted table. (The `tidy` and `kable` functions can help!)
+-   If you are fitting a model, display the model output in a neatly formatted table. (The `gt` `tidy` and `kable` functions can help!)
 
--   If you are creating a plot, use clear labels for all axes, titles, etc.
+-   If you are creating a plot, use `ggplot` or `base`and make sure they are publication ready. That means there are clear labels for all axes, titles, etc.
 
 -   Commit and push your work to GitHub regularly, at least after each exercise. Write short and informative commit messages.
 
@@ -58,9 +58,9 @@ Use the `stars` data in `robustbase`. This data looks at the relationship betwee
 
     b\. Bootstrap the median (using the `boot` package) and plot the histogram with `ggplot2`
 
-    c\. For the mean bootstraps, plot the 95% confidence Intervals (Percentile and BCa) ) along with the mean. Use ggtext to mark the lines noting what they represent.
+    c\. For the mean bootstraps, plot the 95% confidence intervals (percentile and bca) ) along with the mean. Use `geom_vline annotate` to mark the lines noting what they represent.
 
-    d\. For the median bootstraps, plot the 95% Confidence Intervals (Percentile and BCa). Use ggtext to mark the lines noting what they represent.
+    d\. For the median bootstraps, plot the 95% confidence intervals (Percentile and BCa). Use `geom_vline and annotate` to mark the lines noting what they represent.
 
 3.  You want to test whether the following paired samples are significantly different from one another: pre = \[22,25,17,24,16,29,20,23,19,20\], post = \[18,21,16,22,19,24,17,21,23,18\]. Often researchers would run a paired sampled t-test, but you are concerned the data does not follow a normal distribution.
 
@@ -70,9 +70,9 @@ Use the `stars` data in `robustbase`. This data looks at the relationship betwee
 
     d\. Bootstrap b) with replacement (pdiff1) and plot the histogram with `ggplot2`.
 
-    e\. Calculate the 95% Confidence Intervals (BCa). What can you infer from this?
+    e\. Calculate the 95% confidence intervals (BCa). What can you infer from this?
 
-    f\. Plot bootstrap mean along with 95% CIs (with `ggplot2`). Use ggtext to note what the vertical lines represent.
+    f\. Plot bootstrap mean along with 95% CIs (with `ggplot2`). Use annotate to note what the vertical lines represent.
 
     e\. Write up these results as they would appear in a journal
 
@@ -99,9 +99,11 @@ b\. Calculate the original mean difference between sex
 
 c\. Permute the group labels (10000x)
 
-d\. Plot the Null-Hypothesis Distribution (NHD) for the Difference
+d\. Plot the null-hypothesis distribution (NHD) for the difference
 
-e\. Compare the Observed Mean Difference to the NHD (is *p* \< .05?)
+e\. Compare the observed mean difference to the NHD (is *p* \< .05?)
+
+f\. Re-run using the `permuco` package
 
 ## Robust Linear Models
 
@@ -115,12 +117,12 @@ df <- data.frame(hours=c(1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4,
 
 ```
 
-a\. Use the [lm()](https://www.statology.org/lm-function-in-r/) function to fit a regression model in R that uses **hours** as the predictor variable and **score** as the response variable
+a\. Use the lm() function to fit a regression model in R that uses **hours** as the predictor variable and **score** as the response variable
 
 b\. Interpret the results
 
-c\. Check assumption and report (include plots)
+c\. Check assumptions and report which ones failed (include plots)
 
-d\. Rerun the lm you saved above, but with robust standard errors now
+d\. Re-run the lm you saved above, but with robust standard errors
 
 e\. What differences do you notice between the regular regression and the regression with robust SEs applied?
